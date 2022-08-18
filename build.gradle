@@ -1,0 +1,40 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group 'org.scriptobi'
+version '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-parent:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.7'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools:2.6.7'
+    runtimeOnly 'com.h2database:h2:2.1.212'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.29'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
+    implementation 'io.springfox:springfox-swagger2:3.0.0'
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    //implementation 'org.springdoc:springdoc-openapi-ui'
+}
+
+test {
+    useJUnitPlatform()
+}

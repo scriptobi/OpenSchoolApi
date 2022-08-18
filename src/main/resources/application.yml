@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    #url: jdbc:h2:./database/openSchool_db
+    #url: jdbc:h2:mem:openschool_db
+    #driver-class-name: org.h2.Driver
+    url: jdbc:mysql://localhost:3306/openschool_02
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    initialization-mode: always
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        ddl-auto: create
+        #dialect: org.hibernate.dialect.H2Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+  thymeleaf:
+    cache: false
+server:
+  port: 8181
+welcome:
+  message: Scriptobi
